@@ -1,0 +1,214 @@
+
+
+
+
+        body {
+            margin: 0;
+            font-family: sans-serif;
+            background-color: #E5E6EB;
+            line-height: 1.43; /*spacing between line of text*/
+            letter-spacing: 0.01071em; /*slight space between letters*/
+        }
+
+        .vertical-nav {
+            width: 64px;
+            background-color: #3f51b5;
+            height: 100vh;
+            padding-top: 8px;
+            padding-bottom: 8px;
+            margin: 0;
+            position: absolute;
+            top: 64px;
+            left: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center; 
+        }
+
+        .vertical-nav svg {
+            width: 35px;
+            height: 35px;
+            font-size: 35px;
+            margin-bottom: 20px; 
+        }
+
+        .vertical-nav svg path {
+            fill: white;
+        }
+
+        h1 {
+            text-align: center;
+            font-family: 'Lato', sans-serif;
+            font-weight: 180;
+            color: #314873;
+            margin: 20px 0 0 64px;
+            font-size: 90px;
+            letter-spacing: 35px;
+            text-transform: uppercase;
+            font-weight: bold;
+            padding-top: 50px; /* Adds space inside the element */
+            margin-left: 64px; /* You can leave this if you still want the left margin */
+
+        }
+
+        h2 {
+            text-align: center;
+            font-family: 'Lato', sans-serif;
+            font-weight: 100;
+            color: #738EAF;
+            text-transform: uppercase;
+            letter-spacing: 13px;
+            font-size: 24px;
+            font-weight: bold;
+            transform: translateY(-20px);
+            margin: 10px 0 30px 35px;
+            
+        }
+
+        .container {
+            width: calc(100% - 64px);
+            margin-left: 64px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0;
+            padding: -10px;
+            justify-content: center;
+        }
+
+        .container>div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 120px;
+            /* Same width for all items */
+        }
+        .box:hover{
+            background-color:#fcfbfb ;
+            transition: 0.1s;
+        }
+        .box {
+            background-color: #eeeeee ;  
+            width: 70px;
+            height: 70px;
+            border: 0.5px solid #022355;
+            border-radius: 12px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 8px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: -20px;
+        }
+
+        .box svg {
+            width: 40px;
+            height: 40px;
+            fill: #314873;
+        }
+
+        .label {
+            text-align: center;
+            color: #314873;
+            margin-bottom: 24px;
+            flex-direction: column;
+            font-size: 13px;
+        }
+
+        .initials-circle {
+            margin-left: auto;
+            margin-right: 20px;
+            background-color: rgb(185, 185, 185);
+            color: white;
+            width: 33px;
+            height: 33px;
+            border-radius: 50%;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: Lato, sans-serif;
+            font-size: 16px;
+        }
+
+        .my-header {
+            background-color: #3f51b5;
+            color: white;
+            min-height: 64px;
+            font-size: 25px;
+            font-family: Lato, sans-serif;
+            font-weight: 100;
+            display: flex;
+            align-items: center;
+            padding-left: 20px;
+            padding-right: 20px;
+            position: relative;
+            font-weight: bold;
+            width: 100;
+            margin:0;
+             box-shadow: 0px -5px 15px rgba(0, 0, 0, 1.5);
+        
+             
+        }
+
+        .header-right {
+            margin-left: auto;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            /* spacing between name, initials, and location */
+        }
+
+        .user-name {
+            font-size: 16px;
+            font-family: Lato, sans-serif;
+            color: white;
+            font-weight:bold;
+            font-weight: bolder;
+        }
+
+        .location {
+            display: flex;
+            align-items: center;
+            font-size: 16px;
+            color: white;
+            gap: 5px;
+            font-weight: bold;
+        }
+
+        .location-icon {
+            cursor:pointer;
+            width: 30px;
+            height: 30px;
+        }
+
+        .logout-button {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+        }
+
+        .logout-icon {
+            width: 22px;
+            height: 22px;
+        }
+
+        .version-label {
+        position: fixed;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        color: #314873;
+        font-size: 14px;
+        font-family: Lato, sans-serif;
+        font-weight:bold;
+        z-index: 1000;      
+    }
+    .menu-icon{
+        width:33px;
+        height:33px;
+        cursor: pointer;  
+        transform: translateY(8px); /*This makes the menu icon go down*/
+    }
+
+    
