@@ -1,214 +1,330 @@
+body {
+  margin: 0; /* removes default space from page */
+  font-family: sans-serif;  /* sets this font for entire page */
+  background-color: #e5e6eb; /*background color */
+  line-height: 1.43; /*spacing between lines of text*/
+  letter-spacing: 0.01071em; /*slight space between letters*/
+}
+
+.vertical-nav {  /*navigation bar to pathologist workflow */
+  width: 64px;  /* the width of the nav bar*/
+  background-color: #3f51b5;
+  height: 100vh;  /* this is the full height of the screen*/
+  padding-top: 8px; 
+  padding-bottom: 8px;
+  margin: 0;
+  position: absolute;
+  top: 64px;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor:pointer;
+  z-index: 1000; /* Ensure the vertical nav is above other elements */
+}
+
+.vertical-nav svg { /*style for svg icons inside the vertical nav */
+  width: 35px;
+  height: 35px;
+  font-size: 35px;
+  margin-bottom: 20px;
+}
+
+.vertical-nav svg path {
+  fill: white;
+}
+
+h1 {
+  text-align: center;
+  font-family: "Lato", sans-serif;
+  font-weight: 180;
+  color: #314873;
+  margin: 20px 0 0 64px; /*adds space inside an element */
+  font-size: 90px;
+  letter-spacing: 35px;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding-top: 50px; /* Adds space inside the element */
+  margin-left: 64px; /* You can leave this if you still want the left margin */
+}
+
+h2 {
+  text-align: center;
+  font-family: "Lato", sans-serif;
+  font-weight: 100;
+  color: #738eaf;
+  text-transform: uppercase;
+  letter-spacing: 13px;
+  font-size: 24px;
+  font-weight: bold;
+  transform: translateY(-20px);
+  margin: 10px 0 30px 35px;
+}
+
+.container {
+  width: calc(100% - 64px);
+  margin-left: 64px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: -10px;
+  justify-content: center;
+}
+
+.container > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 110px;
+  /* Same width for all items */
+}
+.box:hover {
+  background-color: #fcfbfb;
+  transition: 0.1s;
+}
+.box {
+  background-color: #eeeeee;
+  width: 70px;
+  height: 70px;
+  border: 0.5px solid #022355;
+  border-radius: 12px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: -20px;
+}
+
+.box svg {
+  width: 40px;
+  height: 40px;
+  fill: #314873;
+}
+
+.label {  /*this label is used for text below the boxes*/
+  text-align: center;
+  color: #314873;
+  margin-bottom: 24px;
+  font-size: 13px;
+}
+
+.initials-circle {
+  margin-left: auto;
+  margin-right: 20px;
+  background-color: rgb(185, 185, 185);
+  color: white;
+  width: 33px;
+  height: 33px;
+  border-radius: 50%;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Lato, sans-serif;
+  font-size: 16px;
+}
+
+.my-header {
+  position: sticky;
+  top:0;
+  background-color: #3f51b5;
+  color: white;
+  min-height: 64px;
+  font-size: 25px;
+  font-family: Lato, sans-serif;
+  font-weight: 100;
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+  padding-right: 20px;
+  position: relative;
+  font-weight: bold;
+  width: 100;
+  margin: 0;
+  box-shadow: 0px -5px 15px rgba(0, 0, 0, 1.5);
+}
+.header-right {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  z-index: 1000;
+}
+.user-name {
+  font-size: 16px;
+  font-family: Lato, sans-serif;
+  color: white;
+  font-weight: bold;
+  font-weight: bolder;
+}
+
+.location {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  color: white;
+  gap: 5px;
+  font-weight: bold;
+}
+
+.location-icon {
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+}
+
+.logout-button {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.logout-icon {
+  width: 22px;
+  height: 22px;
+}
+
+.version-label {
+  position: fixed;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #314873;
+  font-size: 14px;
+  font-family: Lato, sans-serif;
+  font-weight: bold;
+  z-index: 1000;
+}
+
+.menu-container {
+  display: flex;
+  justify-content: center; /* Horizontally center the icon */
+  align-items: center; /* Vertically center the icon */
+  width: 100px; /* You can set your desired width */
+  height: 100px; /* You can set your desired height */
+}
+
+.menu-icon {
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+}
+
+/* Slide-out menu styles */
+.slide-menu {
+  position: fixed;
+  top: 64px;
+  left: -250px;
+  width: 250px;
+  height: calc(100vh - 64px);
+  background: #314873;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  padding-top: 20px;
+  transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 80;
+}
+.slide-menu.open {
+  left: 0;
+  top:64px;
+}
+#menu-overlay {
+  position: fixed;
+  top: 64px;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: -1;
+  display: none;
+}
+#menu-overlay.show {
+  display: block;
+}
+.slide-menu-btn {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.2rem;
+  padding: 18px 30px;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  outline: none;
+
+}
+.slide-menu-btn:hover {
+  background: #e3e3e5;
+}
 
 
+/* Base styles for the menu and overlay */
+#slide-menu {
+  position: fixed;
+  top: 0;
+  left: -250px; /* Hidden by default */
+  width: 250px;
+  height: 100%;
+  background-color: #fcfbfb;
+  transition: left 0.3s ease;
+  padding-top: 20px;
+  z-index: 100; 
+}
 
+#slide-menu.open {
+  left: 0; /* Slide in when open */
+}
 
-        body {
-            margin: 0;
-            font-family: sans-serif;
-            background-color: #E5E6EB;
-            line-height: 1.43; /*spacing between line of text*/
-            letter-spacing: 0.01071em; /*slight space between letters*/
-        }
+#slide-menu.open {
+  transform: translateX(64px); /* Slide menu moves into view */
+}
 
-        .vertical-nav {
-            width: 64px;
-            background-color: #3f51b5;
-            height: 100vh;
-            padding-top: 8px;
-            padding-bottom: 8px;
-            margin: 0;
-            position: absolute;
-            top: 64px;
-            left: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center; 
-        }
+#menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.3);
+  display: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
 
-        .vertical-nav svg {
-            width: 35px;
-            height: 35px;
-            font-size: 35px;
-            margin-bottom: 20px; 
-        }
+#menu-overlay.show {
+  display: block;
+  opacity: 1;
+}
 
-        .vertical-nav svg path {
-            fill: white;
-        }
+/* Button styles for the slide menu */
+.slide-menu-btn {
+  color: black;
+  font-size: 14px;;
+  padding: 18px 30px;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
 
-        h1 {
-            text-align: center;
-            font-family: 'Lato', sans-serif;
-            font-weight: 180;
-            color: #314873;
-            margin: 20px 0 0 64px;
-            font-size: 90px;
-            letter-spacing: 35px;
-            text-transform: uppercase;
-            font-weight: bold;
-            padding-top: 50px; /* Adds space inside the element */
-            margin-left: 64px; /* You can leave this if you still want the left margin */
+/* Styles for the menu icon button */
+.menu-icon-btn {
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+  z-index: 110; /* Ensure it's clickable even if overlay is present */
+}
 
-        }
-
-        h2 {
-            text-align: center;
-            font-family: 'Lato', sans-serif;
-            font-weight: 100;
-            color: #738EAF;
-            text-transform: uppercase;
-            letter-spacing: 13px;
-            font-size: 24px;
-            font-weight: bold;
-            transform: translateY(-20px);
-            margin: 10px 0 30px 35px;
-            
-        }
-
-        .container {
-            width: calc(100% - 64px);
-            margin-left: 64px;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0;
-            padding: -10px;
-            justify-content: center;
-        }
-
-        .container>div {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 120px;
-            /* Same width for all items */
-        }
-        .box:hover{
-            background-color:#fcfbfb ;
-            transition: 0.1s;
-        }
-        .box {
-            background-color: #eeeeee ;  
-            width: 70px;
-            height: 70px;
-            border: 0.5px solid #022355;
-            border-radius: 12px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            margin-bottom: 8px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-top: -20px;
-        }
-
-        .box svg {
-            width: 40px;
-            height: 40px;
-            fill: #314873;
-        }
-
-        .label {
-            text-align: center;
-            color: #314873;
-            margin-bottom: 24px;
-            flex-direction: column;
-            font-size: 13px;
-        }
-
-        .initials-circle {
-            margin-left: auto;
-            margin-right: 20px;
-            background-color: rgb(185, 185, 185);
-            color: white;
-            width: 33px;
-            height: 33px;
-            border-radius: 50%;
-            font-weight: bold;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: Lato, sans-serif;
-            font-size: 16px;
-        }
-
-        .my-header {
-            background-color: #3f51b5;
-            color: white;
-            min-height: 64px;
-            font-size: 25px;
-            font-family: Lato, sans-serif;
-            font-weight: 100;
-            display: flex;
-            align-items: center;
-            padding-left: 20px;
-            padding-right: 20px;
-            position: relative;
-            font-weight: bold;
-            width: 100;
-            margin:0;
-             box-shadow: 0px -5px 15px rgba(0, 0, 0, 1.5);
-        
-             
-        }
-
-        .header-right {
-            margin-left: auto;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            /* spacing between name, initials, and location */
-        }
-
-        .user-name {
-            font-size: 16px;
-            font-family: Lato, sans-serif;
-            color: white;
-            font-weight:bold;
-            font-weight: bolder;
-        }
-
-        .location {
-            display: flex;
-            align-items: center;
-            font-size: 16px;
-            color: white;
-            gap: 5px;
-            font-weight: bold;
-        }
-
-        .location-icon {
-            cursor:pointer;
-            width: 30px;
-            height: 30px;
-        }
-
-        .logout-button {
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-        }
-
-        .logout-icon {
-            width: 22px;
-            height: 22px;
-        }
-
-        .version-label {
-        position: fixed;
-        bottom: 10px;
-        left: 50%;
-        transform: translateX(-50%);
-        color: #314873;
-        font-size: 14px;
-        font-family: Lato, sans-serif;
-        font-weight:bold;
-        z-index: 1000;      
-    }
-    .menu-icon{
-        width:33px;
-        height:33px;
-        cursor: pointer;  
-        transform: translateY(8px); /*This makes the menu icon go down*/
-    }
-
-    
+.menu-icon { 
+  width: 32px;
+  height: 32px;
+  fill: white;
+}
+/* Change text color of buttons in the slide menu */
+.slide-menu-btn {
+  color: black; /* This will set the text color to black */
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+}
